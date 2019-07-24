@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if is_granted('ROLE_ADMIN') %}
+    <div class="form" >
+        {{ form_start(form) }}
+            {{ form_row(form.name) }}
+            {{ form_row(form.content) }}
+            {{ form_row(form.price) }}
+            <button type="submit" class="btn btn-primary" formnovalidate>Save</button>
+        {{ form_end(form) }}
+    </div>
+    {% endif %}
+
+    <h3>Menu</h3>
+    <hr>
+    {% for food in foods %}
+    <div class="food-item">
+        <a href="{{ path('food_view', {'id': food.id}) }}" class="card-link">
+            <h3>{{ food.name }}</h3>
+        </a>
+        <span>({{ food.content }})</span>
+        <span class="price">{{ food.price }}</span>
+    </div>
+        <hr>
+    {% endfor %}
+{% endblock %}
