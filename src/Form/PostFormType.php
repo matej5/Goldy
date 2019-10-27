@@ -40,9 +40,7 @@ class PostFormType extends AbstractType
                 'image',
                 FileType::class,
                 [
-                    'data_class' => null,
-                    'label' => 'Upload image',
-                    'required' => false
+                    'label' => 'Upload image'
                 ]
             );
     }
@@ -51,7 +49,7 @@ class PostFormType extends AbstractType
     {
         $resolver->setDefaults(
             [
-                'data_class' => Post::class
+                'data_class' => null
             ]
         );
     }

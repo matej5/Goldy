@@ -55,8 +55,6 @@ class CategoryController extends AbstractController
             }
 
 
-
-/*
             $categories = $categoryRepository->findAll();
 
             return $this->render(
@@ -66,7 +64,7 @@ class CategoryController extends AbstractController
                     'categories' => $categories,
                 ]
             );
-  */      }
+        }
     }
 
     /**
