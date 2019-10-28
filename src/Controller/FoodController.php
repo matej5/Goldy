@@ -34,7 +34,18 @@ class FoodController extends AbstractController
         $form = $this->createForm(FoodFormType::class, null, ['category' => $category]);
         $form->handleRequest($request);
         if ($this->isGranted('ROLE_ADMIN') && ($form->isSubmitted() && $form->isValid())) {
-            $food = $form->getData();
+            /*
+            * @var Food $food
+            */
+            $food = new Food();
+
+            $food->setName($form->get('name')->getData());
+            $food->setContent($form->get('content')->getData());
+            $food->setPrice($form->get('price')->getData());
+            foreach ($form->get('category')->getData() as $c) {
+                $food->addCategory($c);
+            }
+
             $entityManager->persist($food);
             $entityManager->flush();
             $this->addFlash('success', 'New food created!');

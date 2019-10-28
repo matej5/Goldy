@@ -2,18 +2,19 @@
 
 {% block body %}
     {% if is_granted('ROLE_ADMIN') %}
-    <div class="form" >
+    <button class="btn btn-primary" onclick="openForm()">New Food</button>
+    <div class="form-popup" id="myForm">
         {{ form_start(form) }}
             {{ form_row(form.name) }}
             {{ form_row(form.content) }}
             {{ form_row(form.price) }}
             <button type="submit" class="btn btn-primary" formnovalidate>Save</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         {{ form_end(form) }}
     </div>
     {% endif %}
 
     <h3>Menu</h3>
-    <hr>
     {% for food in foods %}
     <div class="food-item">
         <a href="{{ path('food_view', {'id': food.id}) }}" class="card-link">
