@@ -28,13 +28,18 @@ class FoodController extends AbstractController
      * @param CategoryRepository $categoryRepository
      * @return Response
      */
-    public function menu(Request $request, FoodRepository $foodRepository, EntityManagerInterface $entityManager, CategoryRepository $categoryRepository)
-    {
+    public function menu
+    (
+        Request $request,
+        FoodRepository $foodRepository,
+        EntityManagerInterface $entityManager,
+        CategoryRepository $categoryRepository
+    ) {
         $category = $categoryRepository->findAll();
         $form = $this->createForm(FoodFormType::class, null, ['category' => $category]);
         $form->handleRequest($request);
         if ($this->isGranted('ROLE_ADMIN') && ($form->isSubmitted() && $form->isValid())) {
-            /*
+            /**
             * @var Food $food
             */
             $food = new Food();
@@ -51,12 +56,16 @@ class FoodController extends AbstractController
             $this->addFlash('success', 'New food created!');
             return $this->redirectToRoute('menu');
         }
+
         $foods = $foodRepository->findAll();
 
-        return $this->render('menu/index.html.twig', [
-            'form' => $form->createView(),
-            'foods' => $foods
-        ]);
+        return $this->render(
+            'menu/index.html.twig',
+            [
+                'form' => $form->createView(),
+                'foods' => $foods
+            ]
+        );
     }
 
     /**

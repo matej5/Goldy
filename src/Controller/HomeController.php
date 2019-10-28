@@ -28,9 +28,12 @@ class HomeController extends AbstractController
     {
         $user = $this->getUser();
 
-        return $this->render('home/index.html.twig', [
-            'form' => 'Bla'
-        ]);
+        return $this->render(
+            'home/index.html.twig',
+            [
+                'form' => 'Bla'
+            ]
+        );
     }
 
     /**
@@ -43,8 +46,11 @@ class HomeController extends AbstractController
     {
         $user = $this->getUser();
 
-        return $this->render('home/index.html.twig', [
-            'form' => 'Bla'
-        ]);
+        return $this->render(
+            'home/index.html.twig',
+            [
+                'form' => 'Bla'
+            ]
+        );
     }
 }

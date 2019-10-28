@@ -104,7 +104,7 @@ class Food
         return $this->category;
     }
 
-    public function addCategory(Category $category): self
+    public function addCategory(\App\Entity\Category $category): self
     {
         if (!$this->category->contains($category)) {
             $this->category[] = $category;
@@ -113,7 +113,7 @@ class Food
         return $this;
     }
 
-    public function removeCategory(Category $category): self
+    public function removeCategory(\App\Entity\Category $category): self
     {
         if ($this->category->contains($category)) {
             $this->category->removeElement($category);
@@ -130,7 +130,7 @@ class Food
         return $this->comments;
     }
 
-    public function addComment(Comment $comment): self
+    public function addComment(\App\Entity\Comment $comment): self
     {
         if (!$this->comments->contains($comment)) {
             $this->comments[] = $comment;
@@ -140,7 +140,7 @@ class Food
         return $this;
     }
 
-    public function removeComment(Comment $comment): self
+    public function removeComment(\App\Entity\Comment $comment): self
     {
         if ($this->comments->contains($comment)) {
             $this->comments->removeElement($comment);

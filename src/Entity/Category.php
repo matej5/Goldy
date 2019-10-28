@@ -62,7 +62,7 @@ class Category
         return $this->foods;
     }
 
-    public function addFood(Food $food): self
+    public function addFood(\App\Entity\Food $food): self
     {
         if (!$this->foods->contains($food)) {
             $this->foods[] = $food;
@@ -72,7 +72,7 @@ class Category
         return $this;
     }
 
-    public function removeFood(Food $food): self
+    public function removeFood(\App\Entity\Food $food): self
     {
         if ($this->foods->contains($food)) {
             $this->foods->removeElement($food);

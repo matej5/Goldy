@@ -159,12 +159,12 @@ class Post
         return $this;
     }
 
-    public function getUser(): ?User
+    public function getUser(): ?\App\Entity\User
     {
         return $this->user;
     }
 
-    public function setUser(?User $user): self
+    public function setUser(?\App\Entity\User $user): self
     {
         $this->user = $user;
 

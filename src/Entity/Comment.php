@@ -2,9 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
-
 /**
  * @Doctrine\ORM\Mapping\Entity(repositoryClass="App\Repository\CommentRepository")
  */
@@ -110,12 +107,12 @@ class Comment
         return $this;
     }
 
-    public function getFood(): ?Food
+    public function getFood(): ?\App\Entity\Food
     {
         return $this->food;
     }
 
-    public function setFood(?Food $food): self
+    public function setFood(?\App\Entity\Food $food): self
     {
         $this->food = $food;
 
