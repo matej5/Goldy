@@ -96,6 +96,9 @@
     "fig/link-util": {
         "version": "1.0.0"
     },
+    "gitonomy/gitlib": {
+        "version": "v1.1.0"
+    },
     "jasongrimes/paginator": {
         "version": "1.0.3"
     },
@@ -129,6 +132,9 @@
     "phpdocumentor/type-resolver": {
         "version": "0.4.0"
     },
+    "phpro/grumphp": {
+        "version": "v0.16.1"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -140,6 +146,9 @@
     },
     "psr/log": {
         "version": "1.1.0"
+    },
+    "seld/jsonlint": {
+        "version": "1.7.2"
     },
     "sensio/framework-extra-bundle": {
         "version": "5.2",
